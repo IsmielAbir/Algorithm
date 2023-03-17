@@ -4,14 +4,20 @@ using namespace std;
 const int N = 1e5;
 int visited[N];
 vector<int> adj_list[N];
+
+
 void BFS(int node){
     queue<int>q;
     visited[node]=1;
     q.push(node);
+
+
     while(!q.empty()){
         int head=q.front();
         q.pop();
         cout<<head<<" ";
+
+        
         for(int adj_node:adj_list[head]){
             if(visited[adj_node]==0){
                 visited[adj_node]=1;
@@ -20,6 +26,8 @@ void BFS(int node){
         }
     }   
 }
+
+
 int main()
 {
     int v,e,source=0;
